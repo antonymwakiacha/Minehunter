@@ -1,0 +1,15 @@
+	<html>
+		<head>
+			<h1>MULTIPLE SITES SCANNING</h1>
+		</head>
+				<body>
+					<form action="multiscanning"  enctype="multipart/form-data" method="POST" accept-charset="utf-8" >
+							{% csrf_token %}
+						You can also upload a file that contains a list of websites that you want to scan.<br>
+
+						Upload file you want to scan:
+							<input type="file" name="myfile"><input type="submit" value="Upload">
+					</form>
+				</body>
+		</html>
+

@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+	<head>
+	 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	 <h1></h1>
+	<body>
+		<form action="scanning" method="POST">
+			{% csrf_token %}
+			<p>Enter the website to scan:<br>
+				<input type="text" name="website">
+				<input type="submit" value='submit'>
+			</p>
+		</form>
+	</body>
+</head>
+
+</html>
