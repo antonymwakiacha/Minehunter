@@ -11,10 +11,12 @@ from colorama import Fore
 from colorama import Style
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Images
 
 #function for the home web page
 def home(request):
-	return render(request,'home.html')
+	images=Images.objects.all()
+	return render(request,'home.html',{"images":images})
 
 #function to handle 'yes' aor 'no' response from a user
 def first(request):
@@ -49,10 +51,10 @@ def scanning(request):
 
 			final=website3.find("script",text=minerRegex)
 			if final==None:#result is None if there is no cryptomining code in site
-				return HttpResponse("No embedded cryptomining code found")
+				return render(request,"secure.html",{"website":website})
 
 			else:#output i.e result  gives the actual javascript code that does the cryptomining thus modified to just return the response below
-					return HttpResponse("cryptomining found")
+					return render(request,"insecure.html",{"website":website})
 
 		except:
 			return HttpResponse("Could not connect.Please check your internet connection or you have entered a wrong site name")
