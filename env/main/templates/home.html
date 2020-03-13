@@ -1,7 +1,6 @@
-<html>
-	 <head>
-	 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	 	<h1>WELCOME:</h1>
+{% load static %}
+<!-- <html>
+	 <head><h1>WELCOME:</h1>
             </head>
 		<body>
 			<form action="first", method="POST">
@@ -12,4 +11,183 @@
 				</p>
 			</form>
 		</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>MINE HUNTER!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+	/* Make the image fully responsive */
+	.carousel-inner img {
+	width: 100%;
+	height: 50%;
+	}
+
+
+
+
+	h2 {
+    font-family: Arial, Verdana;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #091f2f;
+    text-transform: uppercase;
+}
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    background: #f4f4f4;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+    display: block;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+.accordion-section .panel-default .panel-title a:after {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-size: 3rem;
+    content: "\f106";
+    color: #1f7de2;
+    float: right;
+    margin-top: -12px;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+}
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+}
+
+
+	</style>
+	
+  </head>
+	  	<!-- <h2>Let's Get Started :)</h2> -->
+<!-- <div id="demo" class="carousel slide" data-ride="carousel"> -->
+	<!-- Indicators
+	<ul class="carousel-indicators">
+	<li data-target="#demo" data-slide-to="0" class="active"></li>
+	<li data-target="#demo" data-slide-to="1"></li>
+	<li data-target="#demo" data-slide-to="2"></li>
+	</ul> -->
+
+		  <!-- The slideshow -->
+
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">HOME</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<h1>Karibu Mine Hunter!</h1>
+					
+			    <div class="card">
+
+			      <img src="{% static 'images/Crypto2.jpg' %}" class="d-block w-100" alt="crypto2">
+			      
+ 			    </div>
+				<h3 class="text-primary">Are you safe from Crypto Jackers? Check here!</h3>
+				<div class="form">
+					<form action="scanning" method="POST">
+					{% csrf_token %}
+
+						<div class = "form-group">
+						<label for="usr">Enter URL:</label>
+						<input type="text" class="form-control" id="usr" name="website">
+						</div>
+						<button type="submit" class="btn btn-primary">SCAN</button>
+					</form>
+					
+					<div class="form-group">
+						<label for="comment" class="text-primary">Satisfied? Leave a Comment:</label>
+						<textarea class="form-control" rows="5" id="comment"></textarea>
+					</div>
+							<h4 class="section-faq-heading text-primary">Why you should care...</h4>
+								  
+
+				</div>
+				<!-- <section class="section section-faq"> -->
+
+					<section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+								  <div class="container">
+
+
+									 
+									  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+										  <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+											<h3 class="text-success">
+											  <a class="text-success" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+												What is cryptojacking?
+											  </a>
+											</h3>
+										  </div>
+										  <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+											<div class="panel-body px-3 mb-4">
+											  <p>Cryptojacking is the secret use of your computing device to mine cryptocurrency.</p>
+											  
+											</div>
+										  </div>
+										</div>
+										
+										<div class="panel panel-default">
+										  <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
+											<h3 class="text-success">
+											  <a class="text-success" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+												How does it work?
+											  </a>
+											</h3>
+										  </div>
+										  <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+											<div class="panel-body px-3 mb-4">
+											  <p>Cryptojacking, also known as cryptocurrency mining, works the following way: some websites run hidden
+						            cryptocurrency mining scripts in your browser without letting you know. They do it to mine cryptocurrencies
+						            by using your computer's CPU to earn money for someone else. As a result, your computer gets loud, hot, and
+						            slow.</p>
+											</div>
+										  </div>
+										</div>
+										
+										<div class="panel panel-default">
+										  <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
+											<h3 class="text-success">
+											  <a class="text-success" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+												<h3 class="text-success">Do you pay for this service?</h3>
+											  </a>
+											</h3>
+										  </div>
+										  <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+											<div class="panel-body px-3 mb-4">
+											  <p>No. The test is safe and only conducted for raising awareness of the mining issue currently affecting Kenya.</p>
+											</div>
+										  </div>
+										</div>
+									</div>
+								  
+								  </div>
+								</section>
+							</div>
+			
+		</div>
+	</div>
+</body>
+</head>
 </html>
